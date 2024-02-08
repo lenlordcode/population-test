@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    height: 100%;
+    background: #ffffff;
+    padding-bottom: 100px;
+}
+
+*{
+    font-family: Arial;
+    font-size: 23px;
+}
+
+.__margin_top_40{
+    margin-top:40px;
+}
+
+.__margin_top_20{
+    margin-top:20px;
+}
+
+.__margin_top_10{
+    margin-top:10px;
+}
+
+.__width_p_100{
+    width: 100%;
+}
+
+.__background_royal_blue{
+    background: #d7d8f8;
+}
+
+.__color_purple{
+    color: #6a1779;
+}
+
+.__bold{
+    font-weight: bold;
+}
+
+.__italic{
+    font-style: italic;
+}
+
+.__h1{
+    font-size: 46px;
+}
+
+.__little{
+    font-size: 16px;
+}
+
+.__space_between{
+    display: flex;
+    justify-content: space-between;
+}
