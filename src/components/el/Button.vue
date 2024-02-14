@@ -12,7 +12,7 @@
         min-width: 180px;
         background-color: v-bind(setBackground);
         border-radius: 10px;
-        padding: 15px;
+        padding: 8px;
         color: white;
         border: none;
     }

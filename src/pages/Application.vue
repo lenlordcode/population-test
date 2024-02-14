@@ -1,5 +1,9 @@
 <template>
   <div class="application__container">
+<!--      <div class="application__form_title __color_purple __h1 __bold">-->
+<!--          <div>Заселение в общежития</div>-->
+<!--          <div>(Форма заявление о заселение)</div>-->
+<!--      </div>-->
       <div class="application__info">
           <div>
               <div class="application__info_title __bold">Для заселения в общежитие необходимо</div>
@@ -11,7 +15,8 @@
           </div>
           <div class="__margin_top_40">
               <div class="application__info_title __bold">Пример заполнения заявления</div>
-              <div class="__italic">Прошу Вас заключить договор найма специализированного жилого помещения и предоставить
+              <div class="__italic">
+                  Прошу Вас заключить договор найма специализированного жилого помещения и предоставить
               мне во владение и пользования для временного проживания место в общежитие на период обучения в
               ФГБОУ ВО "МГУ им. Н.П. Огарева" с "____"&nbsp;&nbsp;___________&nbsp;&nbsp;20___ г. на ______________ основе.</div>
           </div>
@@ -20,12 +25,11 @@
 
 
     <div class="application__form __color_purple">
-        <div class="application__form_title __h1 __bold">Заселение в общежития <br>(Форма заявление о заселение)</div>
         <div class="application__form_container">
             <div class="application__form_list">
-                <div class="__margin_top_20">ФИО</div>
+                <div class="__margin_top_10">ФИО</div>
                 <el-input v-model="fio"></el-input>
-                <div class="__margin_top_20">E-MAIL</div>
+                <div class="__margin_top_10">E-MAIL</div>
                 <el-input v-model="email"></el-input>
                 <div class="__margin_top_10">Институт или факультет</div>
                 <el-input v-model="institute"></el-input>

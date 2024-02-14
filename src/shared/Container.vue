@@ -10,7 +10,8 @@
       padding: 20px 40px;
       max-width: 1920px;
       margin: 0 auto;
-      min-height:100%;
+      max-height: 100%;
+      overflow-y: auto;
   }
 </style>
 

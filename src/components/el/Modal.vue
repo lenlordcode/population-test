@@ -1,7 +1,7 @@
 <template>
     <div class="el-modal" v-if="modelValue">
         <div class="el-modal__container">
-            <div class="el-modal__cancel" @click="$emit('update:modelValue', false)">X</div>
+            <div class="el-modal__cancel" @click="$emit('update:modelValue', false)">&#10006;</div>
             <slot></slot>
         </div>
     </div>
@@ -9,7 +9,7 @@
 
 <style scoped>
   .el-modal{
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       display: flex;
@@ -24,6 +24,8 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
+      max-height: 100%;
+      overflow-y: auto;
   }
 
   .el-modal__cancel{
@@ -55,13 +57,11 @@ export default defineComponent({
     },
     data(){
         return{
-            showModal: true,
+            visibility: true,
         }
     },
     methods:{
-        closeModal (){
-            console.log (this.visibility);
-        }
+
     }
 })
 </script>

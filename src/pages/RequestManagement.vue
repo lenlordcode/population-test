@@ -12,7 +12,8 @@
                 <el-input :value="this.applicationData.institut" readonly/>
                 <div class="__margin_top_20">Заявление</div>
                 <el-textarea :value="this.applicationData.zayava" readonly/>
-                <el-button class="__margin_top_20 __width_p_100" @click="modalSelectRoom=true">Выбрать комнату</el-button>
+                <el-button v-if="!active_room" class="__margin_top_20 __width_p_100" @click="modalSelectRoom=true">Выбрать комнату</el-button>
+                <el-button v-if="active_room" class="__margin_top_20 __width_p_100" @click="modalSelectRoom=true">{{active_room}}</el-button>
                 <div class="__space_between __margin_top_20">
                     <el-button :background="'cancel'" @click="modalRefuse=true">Отказать</el-button>
                     <el-button>Подтвердить</el-button>
@@ -54,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <el-button>Выбрать</el-button>
+            <el-button @click="modalSelectRoom=false">Выбрать</el-button>
         </el-modal>
         <el-modal v-model="modalRefuse">
             <div class="rm__title __h1 __color_purple">Укажите причину отказа</div>
@@ -179,9 +180,16 @@
   }
 
   .rm__table_row_title{
+      position: relative;
       display: grid;
       align-items: center;
       grid-template-columns: 100px 1fr 1fr 1fr 2fr;
+  }
+
+  .rm__table_body{
+      overflow-y: scroll;
+      max-height: 600px;
+      padding-bottom: 20px;
   }
 
   .rm__table_row {
@@ -250,6 +258,7 @@ export default defineComponent({
                 {id: 5, name: 'Эльбрсуов Варвар Чахалов',email:'fdsfsdqweq@mail.ru', institut: 'МГУ–ППИ', zayava: 'Прошу Вас заключить договор найма специализированного жилого помещения и предоставить мне во владение и пользования для временного проживания место в общежитие на период обучения в ФГБОУ ВО "МГУ им. Н.П. Огарева" с "25"  Июля  2024 г. на бюджетное основе.'},
                 {id: 6, name: 'Эльбрсуов Варвар Чахалов',email:'fdsfsdqweq@mail.ru', institut: 'МГУ–ППИ', zayava: 'Прошу Вас заключить договор найма специализированного жилого помещения и предоставить мне во владение и пользования для временного проживания место в общежитие на период обучения в ФГБОУ ВО "МГУ им. Н.П. Огарева" с "25"  Июля  2024 г. на бюджетное основе.'},
             ],
+            lastItemScheme: '',
         }
     },
     computed:{
@@ -270,11 +279,15 @@ export default defineComponent({
 
         setActiveRoom (number, bed, name, key){
             const clickedElement = event.target;
-            console.log (key);
+            if (this.lastItemScheme !== clickedElement && this.lastItemScheme !== ''){
+                this.lastItemScheme.classList.remove('rm__schema_section_selected')
+            }
+            this.lastItemScheme = clickedElement;
+
+
             if (!name){
                 clickedElement.classList.add ('rm__schema_section_selected');
             }
-            console.log ('test');
             document.getElementById(key).click()
             this.active_room = 'Комната №' + number + '. Кровать: №'+ bed + '. Проживает: '+ (name? name: 'пусто');
         },
