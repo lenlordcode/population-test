@@ -12,7 +12,7 @@
                 <el-input :value="this.applicationData.institut" readonly/>
                 <div class="__margin_top_20">Заявление</div>
                 <el-textarea :value="this.applicationData.zayava" readonly/>
-                <el-button v-if="!active_room" class="__margin_top_20 __width_p_100" @click="modalSelectRoom=true">Выбрать комнату</el-button>
+                <el-button v-if="(!active_room)" class="__margin_top_20 __width_p_100" @click="modalSelectRoom=true">Выбрать комнату</el-button>
                 <el-button v-if="active_room" class="__margin_top_20 __width_p_100" @click="modalSelectRoom=true">{{active_room}}</el-button>
                 <div class="__space_between __margin_top_20">
                     <el-button :background="'cancel'" @click="modalRefuse=true">Отказать</el-button>
