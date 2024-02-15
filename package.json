@@ -2,7 +2,6 @@
   "name": "frontend",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://lenlordcode.github.io/population-test/#/",
   "scripts": {
     "serve": "vite",
     "build": "vite build",

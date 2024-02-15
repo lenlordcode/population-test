@@ -7,7 +7,7 @@ import RequestManagement from "@/pages/RequestManagement.vue";
 
 
 export default createRouter({
-    history: createWebHashHistory(),
+    // history: createWebHashHistory(),
     routes: [
         {
             path: '/',
